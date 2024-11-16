@@ -114,6 +114,7 @@ class PianoFrame(QGraphicsView):
                         lst = ks
                         ks.play()
                         time.sleep(t)
+                    pygame.event.clear()
             elif event.type == pygame.KEYUP:
                 i = get_key_index(event.key, keyList)
                 im = get_key_index(event.key, keyListM)

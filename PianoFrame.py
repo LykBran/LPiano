@@ -62,6 +62,17 @@ class PianoFrame(QGraphicsView):
         self.timer.timeout.connect(self.update_piano)
         self.timer.start(1000 // 100)
 
+    def play(self, sounds, times):
+        last = None
+        pygame.draw.circle(screen, (0, 255, 255), (10, 10), 5)
+        pygame.display.flip()
+        for ks, t in zip(sounds, times):
+            if last:
+                last.stop()
+            last = ks
+            ks.play()
+            time.sleep(t)
+
     def update_piano(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -107,7 +118,7 @@ class PianoFrame(QGraphicsView):
                                 self.recordTimes,
                             ]
                         )
-                        print(self.records)
+                        # print(self.records)
                         # print(record)
                         # print(recordTimes)
                     else:
@@ -117,14 +128,8 @@ class PianoFrame(QGraphicsView):
                         self.recordTimes = []
                 # Press K to play the record
                 if event.key == pygame.K_k and not self.recordFlag and self.record:
-                    lst = None
                     self.recordPlaying = True
-                    for ks, t in zip(self.record, self.recordTimes):
-                        if lst:
-                            lst.stop()
-                        lst = ks
-                        ks.play()
-                        time.sleep(t)
+                    self.play(self.record, self.recordTimes)
                     self.recordPlaying = False
                     pygame.event.clear()
             elif event.type == pygame.KEYUP:

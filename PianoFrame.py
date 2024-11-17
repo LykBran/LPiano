@@ -28,6 +28,8 @@ soundList = [
 soundListM = [
     pygame.mixer.Sound(f"./resources/{i}{j}m.ogg") for j in "345" for i in "cdfga"
 ][:-3]
+notesList = [f"{i}{j}" for j in "345" for i in "cdefgab"][:-4]
+notesListM = [f"{i}{j}m" for j in "345" for i in "cdfga"][:-3]
 keyFlagList = [0] * (len(keyList) + len(keyListM))
 
 
@@ -50,6 +52,7 @@ class PianoFrame(QGraphicsView):
         # Recording init
         self.recordTimes = []
         self.record = []
+        self.recordNotes = []
         self.records = []
         self.recordFlag = False
         self.recordTime = -1
@@ -94,6 +97,7 @@ class PianoFrame(QGraphicsView):
                             self.recordTimes.append(time.time() - self.recordTime)
                         self.recordTime = time.time()
                         self.record.append(self.sound)
+                        self.recordNotes.append(notesList[i])
                     self.sound.play()
                     keyFlagList[i] = 1
                 # Press black key
@@ -106,6 +110,7 @@ class PianoFrame(QGraphicsView):
                             self.recordTimes.append(time.time() - self.recordTime)
                         self.recordTime = time.time()
                         self.record.append(self.sound)
+                        self.recordNotes.append(notesListM[im])
                     self.sound.play()
                     keyFlagList[im + len(keyList)] = 1
                 # Press SPACE to record
@@ -120,6 +125,7 @@ class PianoFrame(QGraphicsView):
                                 f"Record {self.recordNum}",
                                 self.record,
                                 self.recordTimes,
+                                self.recordNotes,
                             ]
                         )
                         # print(self.records)

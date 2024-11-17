@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>799</width>
     <height>600</height>
    </rect>
   </property>
@@ -16,7 +16,11 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QListView" name="listView"/>
+     <widget class="QListWidget" name="listWidget">
+      <property name="movement">
+       <enum>QListView::Movement::Static</enum>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -25,12 +29,86 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>799</width>
      <height>33</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="action_import"/>
+    <addaction name="action_export"/>
+   </widget>
+   <widget class="QMenu" name="menu_Edit">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+    <addaction name="action_delete"/>
+   </widget>
+   <widget class="QMenu" name="menu_Record">
+    <property name="title">
+     <string>录音</string>
+    </property>
+    <addaction name="action_sync"/>
+    <addaction name="separator"/>
+    <addaction name="action_play"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Edit"/>
+   <addaction name="menu_Record"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_import">
+   <property name="text">
+    <string>导入</string>
+   </property>
+  </action>
+  <action name="action_export">
+   <property name="text">
+    <string>导出</string>
+   </property>
+  </action>
+  <action name="action_sync">
+   <property name="text">
+    <string>同步</string>
+   </property>
+  </action>
+  <action name="action_update">
+   <property name="text">
+    <string>更新</string>
+   </property>
+  </action>
+  <action name="action_remame">
+   <property name="text">
+    <string>重命名</string>
+   </property>
+  </action>
+  <action name="action_delete">
+   <property name="text">
+    <string>删除</string>
+   </property>
+  </action>
+  <action name="action_undo">
+   <property name="text">
+    <string>撤销</string>
+   </property>
+  </action>
+  <action name="action_redo">
+   <property name="text">
+    <string>重做</string>
+   </property>
+  </action>
+  <action name="action_play">
+   <property name="text">
+    <string>播放</string>
+   </property>
+  </action>
+  <action name="action_rename">
+   <property name="text">
+    <string>重命名</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

@@ -54,6 +54,7 @@ class PianoFrame(QGraphicsView):
         self.recordFlag = False
         self.recordTime = -1
         self.recordPlaying = False
+        self.recordNum = 0
 
         self.sound = None
         self.cnt = 0
@@ -63,15 +64,17 @@ class PianoFrame(QGraphicsView):
         self.timer.start(1000 // 100)
 
     def play(self, sounds, times):
-        last = None
-        pygame.draw.circle(screen, (0, 255, 255), (10, 10), 5)
-        pygame.display.flip()
-        for ks, t in zip(sounds, times):
-            if last:
-                last.stop()
-            last = ks
-            ks.play()
-            time.sleep(t)
+        if not self.recordFlag:
+            last = None
+            pygame.draw.circle(screen, (0, 255, 255), (10, 10), 5)
+            pygame.display.flip()
+            for ks, t in zip(sounds, times):
+                if last:
+                    last.stop()
+                last = ks
+                ks.play()
+                time.sleep(t)
+            pygame.event.clear()
 
     def update_piano(self):
         for event in pygame.event.get():
@@ -111,9 +114,10 @@ class PianoFrame(QGraphicsView):
                         if self.recordTime != 0:
                             self.recordTimes.append(time.time() - self.recordTime)
                         self.recordFlag = False
+                        self.recordNum += 1
                         self.records.append(
                             [
-                                f"Record {len(self.records)+1}",
+                                f"Record {self.recordNum}",
                                 self.record,
                                 self.recordTimes,
                             ]
@@ -126,12 +130,11 @@ class PianoFrame(QGraphicsView):
                         self.recordTime = -1
                         self.record = []
                         self.recordTimes = []
-                # Press K to play the record
+                # Press K to play the latest record
                 if event.key == pygame.K_k and not self.recordFlag and self.record:
                     self.recordPlaying = True
                     self.play(self.record, self.recordTimes)
                     self.recordPlaying = False
-                    pygame.event.clear()
             elif event.type == pygame.KEYUP:
                 i = get_key_index(event.key, keyList)
                 im = get_key_index(event.key, keyListM)

@@ -1,6 +1,7 @@
 # LPiano
 
 A simple piano app for piano playing and recording
+(Unfinished)
 
 ## Features
 
@@ -23,7 +24,7 @@ A simple piano app for piano playing and recording
 5. Click 'Import' and choose your recording file to import it
 6. Select one of the recordings and click 'Play' to play it
 
-- Want more helps? Please turn to 'Helps' in the menu bar.
+- Want more helps? Please turn to 'Helps' in the menu bar. (Unfinished)
 
 ## Contributing
 

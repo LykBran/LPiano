@@ -45,6 +45,8 @@ class Ui_MainWindow(object):
         self.action_play.setObjectName(u"action_play")
         self.action_rename = QAction(MainWindow)
         self.action_rename.setObjectName(u"action_rename")
+        self.action_helps = QAction(MainWindow)
+        self.action_helps.setObjectName(u"action_helps")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
@@ -65,6 +67,8 @@ class Ui_MainWindow(object):
         self.menu_Edit.setObjectName(u"menu_Edit")
         self.menu_Record = QMenu(self.menubar)
         self.menu_Record.setObjectName(u"menu_Record")
+        self.menu_About = QMenu(self.menubar)
+        self.menu_About.setObjectName(u"menu_About")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -73,12 +77,14 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menu_File.menuAction())
         self.menubar.addAction(self.menu_Edit.menuAction())
         self.menubar.addAction(self.menu_Record.menuAction())
+        self.menubar.addAction(self.menu_About.menuAction())
         self.menu_File.addAction(self.action_import)
         self.menu_File.addAction(self.action_export)
         self.menu_Edit.addAction(self.action_delete)
         self.menu_Record.addAction(self.action_sync)
         self.menu_Record.addSeparator()
         self.menu_Record.addAction(self.action_play)
+        self.menu_About.addAction(self.action_helps)
 
         self.retranslateUi(MainWindow)
 
@@ -97,8 +103,10 @@ class Ui_MainWindow(object):
         self.action_redo.setText(QCoreApplication.translate("MainWindow", u"\u91cd\u505a", None))
         self.action_play.setText(QCoreApplication.translate("MainWindow", u"\u64ad\u653e", None))
         self.action_rename.setText(QCoreApplication.translate("MainWindow", u"\u91cd\u547d\u540d", None))
+        self.action_helps.setText(QCoreApplication.translate("MainWindow", u"\u5e2e\u52a9", None))
         self.menu_File.setTitle(QCoreApplication.translate("MainWindow", u"\u6587\u4ef6", None))
         self.menu_Edit.setTitle(QCoreApplication.translate("MainWindow", u"\u7f16\u8f91", None))
         self.menu_Record.setTitle(QCoreApplication.translate("MainWindow", u"\u5f55\u97f3", None))
+        self.menu_About.setTitle(QCoreApplication.translate("MainWindow", u"\u5173\u4e8e", None))
     # retranslateUi
 

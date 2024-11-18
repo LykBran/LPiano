@@ -54,9 +54,16 @@
     <addaction name="separator"/>
     <addaction name="action_play"/>
    </widget>
+   <widget class="QMenu" name="menu_About">
+    <property name="title">
+     <string>关于</string>
+    </property>
+    <addaction name="action_helps"/>
+   </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_Edit"/>
    <addaction name="menu_Record"/>
+   <addaction name="menu_About"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="action_import">
@@ -107,6 +114,11 @@
   <action name="action_rename">
    <property name="text">
     <string>重命名</string>
+   </property>
+  </action>
+  <action name="action_helps">
+   <property name="text">
+    <string>帮助</string>
    </property>
   </action>
  </widget>

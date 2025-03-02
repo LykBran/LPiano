@@ -122,7 +122,7 @@ class PianoFrame(QGraphicsView):
                         self.recordNum += 1
                         self.records.append(
                             [
-                                f"Record {self.recordNum}",
+                                f"Recording {self.recordNum}",
                                 self.record,
                                 self.recordTimes,
                                 self.recordNotes,
@@ -137,9 +137,9 @@ class PianoFrame(QGraphicsView):
                         self.record = []
                         self.recordTimes = []
                 # Press K to play the latest record
-                if event.key == pygame.K_k and not self.recordFlag and self.record:
+                if event.key == pygame.K_k and not self.recordFlag and self.records:
                     self.recordPlaying = True
-                    self.play(self.record, self.recordTimes)
+                    self.play(self.records[-1][1], self.records[-1][2])
                     self.recordPlaying = False
             elif event.type == pygame.KEYUP:
                 i = get_key_index(event.key, keyList)

@@ -45,6 +45,7 @@
      <string>编辑</string>
     </property>
     <addaction name="action_delete"/>
+    <addaction name="action_rename"/>
    </widget>
    <widget class="QMenu" name="menu_Record">
     <property name="title">
@@ -81,29 +82,9 @@
     <string>同步</string>
    </property>
   </action>
-  <action name="action_update">
-   <property name="text">
-    <string>更新</string>
-   </property>
-  </action>
-  <action name="action_remame">
-   <property name="text">
-    <string>重命名</string>
-   </property>
-  </action>
   <action name="action_delete">
    <property name="text">
     <string>删除</string>
-   </property>
-  </action>
-  <action name="action_undo">
-   <property name="text">
-    <string>撤销</string>
-   </property>
-  </action>
-  <action name="action_redo">
-   <property name="text">
-    <string>重做</string>
    </property>
   </action>
   <action name="action_play">
@@ -111,14 +92,14 @@
     <string>播放</string>
    </property>
   </action>
-  <action name="action_rename">
-   <property name="text">
-    <string>重命名</string>
-   </property>
-  </action>
   <action name="action_helps">
    <property name="text">
     <string>帮助</string>
+   </property>
+  </action>
+  <action name="action_rename">
+   <property name="text">
+    <string>重命名</string>
    </property>
   </action>
  </widget>

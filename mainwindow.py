@@ -1,6 +1,13 @@
 from mainwindow_ui import Ui_MainWindow
 from PianoFrame import PianoFrame, notesList, notesListM, soundList, soundListM
-from PySide6.QtWidgets import QMainWindow, QApplication, QMessageBox, QFileDialog
+from PySide6.QtWidgets import (
+    QMainWindow,
+    QApplication,
+    QMessageBox,
+    QFileDialog,
+    QInputDialog,
+    QLineEdit,
+)
 from PySide6.QtGui import QIcon
 import sys
 
@@ -16,7 +23,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.action_sync.triggered.connect(self.sync)
         self.action_play.triggered.connect(self.play)
         self.action_delete.triggered.connect(self.delete)
-        self.action_export.triggered.connect(self.export)
+        self.action_rename.triggered.connect(self.rename)
+        self.action_export.triggered.connect(self.exp)
         self.action_import.triggered.connect(self.imp)
 
     def sync(self):
@@ -48,7 +56,33 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     break
             self.sync()
 
-    def export(self):
+    def rename(self):
+        if self.listWidget.selectedIndexes():
+            name = self.listWidget.selectedItems()[0].text()
+            newname, ok = QInputDialog.getText(
+                self,
+                self.tr("重命名"),
+                self.tr("新名称："),
+                text=name,
+            )
+            if ok:
+                for r in self.records:
+                    if r[0] == newname:
+                        QMessageBox.information(
+                            self,
+                            self.tr("提示"),
+                            self.tr("名称不可重复！"),
+                            QMessageBox.Ok,
+                        )
+                        return
+                for r in self.records:
+                    if r[0] == name:
+                        r[0] = newname
+                        # print(self.pianoFrame.records)
+                        break
+            self.sync()
+
+    def exp(self):
         if not self.listWidget.selectedIndexes():
             return
         name = self.listWidget.selectedItems()[0].text()
@@ -86,7 +120,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 except ValueError:
                     i = notesListM.index(n)
                     sounds.append(soundListM[i])
-            self.records.append((filename.split("/")[-1], sounds, times, notes))
+            recname = filename.split("/")[-1]
+            for r in self.records:
+                if r[0] == recname:
+                    QMessageBox.information(
+                        self,
+                        self.tr("提示"),
+                        self.tr("名称不可重复！"),
+                        QMessageBox.Ok,
+                    )
+                    return
+            self.records.append([recname, sounds, times, notes])
         self.sync()
 
 

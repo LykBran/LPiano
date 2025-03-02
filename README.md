@@ -3,11 +3,6 @@
 A simple piano app for piano playing and recording
 (Unfinished)
 
-## Features
-
-- Play piano on a virtual piano keyboard
-- Save and play your record
-
 ## Installation
 
 1. Clone the repository
@@ -15,16 +10,16 @@ A simple piano app for piano playing and recording
 3. run `pip install -r requirements.txt` under the project directory in the terminal (It's recommended to use a virtual environment)
 4. run `python main.py` to start the app
 
-## Usage
+## Keyboard Mapping
 
-1. Press keys on the keyboard to play the piano
-2. Press SPACE to record
-3. Press K to play your latest recording
-4. In the main window, you can select a recording and click 'Export' to export it
-5. Click 'Import' and choose your recording file to import it
-6. Select one of the recordings and click 'Play' to play it
-
-- Want more helps? Please turn to 'Helps' in the menu bar. (Unfinished)
+ 1$~~~~$ 2$~~~~$ 3$~~~$ 4$~~~$ 5$~~~$ 6$~~~$ 7$~~~$ 1$~~~$ 2$~~~$ 3  
+ Q$~~~$ W$~~~$ E$~~~$ R$~~~$ T$~~~$ Y$~~~$ U$~~~$ I$~~~$ O$~~~$ P  
+$~~~~~~~$ #1$~$ #2$~~~~~~~~$ #4$~$ #5$~$ #6  
+$~~$ A$~~~$ S$~~~$ D$~~~$ F$~~~$ G$~~~$ H$~~~$ J  
+$~~~~~~$ 1$~~~$ 2$~~~$ 3$~~~~$ 4$~~~$ 5$~~~$ 6$~~~~$ 7  
+$~~~~~~$ Z$~~~$ X$~~~$ C$~~~$ V$~~~$ B$~~~$ N$~~~$ M  
+K : Play your latest recording  
+Space : Start/Stop recording  
 
 ## Contributing
 

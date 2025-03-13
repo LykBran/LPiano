@@ -12,6 +12,15 @@ A simple piano app for piano playing and recording
 
 ## Keyboard Mapping
 
+&nbsp;&nbsp;&nbsp;#1&nbsp;#2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#4&nbsp;#5&nbsp;#6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#1&nbsp;#2  
+1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;0  
+&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3  
+&nbsp;&nbsp;Q&nbsp;&nbsp;W&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;Y&nbsp;&nbsp;&nbsp;U&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;P  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#1&nbsp;#2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#4&nbsp;#5&nbsp;#6  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;F&nbsp;&nbsp;&nbsp;G&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;J&nbsp;&nbsp;&nbsp;K  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;7  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Z&nbsp;&nbsp;&nbsp;X&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;V&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;N&nbsp;&nbsp;M  
+
 K : Play your latest recording  
 Space : Start/Stop recording  
 

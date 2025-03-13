@@ -37,8 +37,10 @@ pygame.key.stop_text_input()
 
 
 class PianoFrame(QGraphicsView):
-    def __init__(self):
+    def __init__(self, father=None):
         super().__init__()
+
+        self.father = father
 
         self.scene = QGraphicsScene()
         self.setScene(self.scene)
@@ -131,6 +133,7 @@ class PianoFrame(QGraphicsView):
                         # print(self.records)
                         # print(record)
                         # print(recordTimes)
+                        self.father.sync()
                     else:
                         self.recordFlag = True
                         self.recordTime = -1

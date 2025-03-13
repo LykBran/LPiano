@@ -18,7 +18,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.icon = QIcon("./resources/note.bmp")
         self.setWindowIcon(self.icon)
-        self.pianoFrame = PianoFrame()
+        self.pianoFrame = PianoFrame(self)
         self.records = self.pianoFrame.records
         self.action_sync.triggered.connect(self.sync)
         self.action_play.triggered.connect(self.play)
